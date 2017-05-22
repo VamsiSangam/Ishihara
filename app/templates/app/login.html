@@ -1,0 +1,104 @@
+﻿{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Import Google Icon Font-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"/>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>{{ title }} | Ishihara</title>
+        <link rel="shortcut icon" href="{% static 'app/images/keys.png' %}">
+    </head>
+    <body class="light-blue">
+        <div class="container">
+            <div class="row valign-wrapper" style="height:100vh">
+                <div class="col s8 pull-s2">
+                    <div class="card">
+                        <div class="card-tabs">
+                            <ul class="tabs tabs-fixed-width">
+                                <li class="tab"><a class="active" href="#tab-login">Login</a></li>
+                                <li class="tab"><a href="#tab-register">Register</a></li>
+                            </ul>
+                        </div>
+                        <div class="card-content">
+                            <div id="tab-login">
+                                <div class="row" style="margin-right:0px;margin-bottom:0px;">
+                                    <form class="col s12" style="padding-right:0px;" method="post" action="">
+                                        <div class="row" style="margin-right:0px;margin-bottom:0px;">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="login-email" type="email" class="validate" name="email" required>
+                                                <label for="login-email">Email ID</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input id="login-password" type="password" class="validate" name="password" required>
+                                                <label for="login-password">Password</label>
+                                            </div>
+                                            <div class="col s12" style="padding-right:0px; margin-top:20px;">
+                                                <div class="right-align">
+                                                    <button type="submit" class="waves-effect waves-light btn">
+                                                        Login
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div id="tab-register">
+                                <div class="row" style="margin-right:0px;margin-bottom:0px;">
+                                    <form class="col s12" style="padding-right:0px;" method="post" action="">
+                                        <div class="row" style="margin-right:0px;margin-bottom:0px;">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">account_circle</i>
+                                                <input id="register-email" type="email" class="validate" name="email" required>
+                                                <label for="register-email">Email ID</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">lock</i>
+                                                <input id="register-password" type="password" class="validate" name="password" required>
+                                                <label for="register-password">Password</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">perm_identity</i>
+                                                <input id="register-name" type="text" class="validate" name="name">
+                                                <label for="register-name">Name</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">location_on</i>
+                                                <input id="register-country" type="email" class="validate" name="country">
+                                                <label for="register-country">Country</label>
+                                            </div>
+                                            <div class="input-field col s12">
+                                                <p>
+                                                    <input class="with-gap" name="gender" value="M" type="radio" id="radio-male" checked />
+                                                    <label for="radio-male">Male</label>
+                                                </p>
+                                                <br>
+                                                <p>
+                                                    <input class="with-gap" name="gender" value="F" type="radio" id="radio-female" />
+                                                    <label for="radio-female">Female</label>
+                                                </p>
+                                            </div>
+                                            <div class="col s12 right-align" style="margin-top:20px; padding-right:0px;">
+                                                <button type="submit" class="waves-effect waves-light btn">
+                                                    Register
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    </body>
+</html>
