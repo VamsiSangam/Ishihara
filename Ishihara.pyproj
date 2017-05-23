@@ -44,6 +44,7 @@
     <Compile Include="Ishihara\wsgi.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\templates\app\test.html" />
     <Content Include="app\templates\app\login.html" />
     <Content Include="requirements.txt" />
   </ItemGroup>

@@ -3,3 +3,5 @@ app/__pycache__/
 app/migrations/__pycache__/
 Ishihara/__pycache__/
 obj/
+.vs/
+app/migrations/*.py

@@ -22,3 +22,56 @@ def login(request):
 
     if request.method == "GET":
         return render(request, 'app/login.html', {'title':'Login'})
+
+
+def test(request):
+    """
+    View method. Returns the login/register page
+    """
+
+    assert isinstance(request, HttpRequest)
+
+    if request.method == "GET":
+        # query questions and options, put it into a list of dict
+        result = []
+
+        for question in Question.objects.all():
+            dict = {}
+            dict['text'] = question.text
+            dict['image'] = 'app/images/' + question.image
+            dict['id'] = question.id
+            dict['options'] = []
+
+            for item in Option.objects.filter(question = question):
+                opt = {}
+                opt['option'] = item.option
+                opt['id'] = item.id
+                dict['options'].append(opt)
+
+            result.append(dict)
+
+        return render(request, 'app/test.html', {'title':'Test', 'questions' : result})
+
+def save(request):
+    """
+    Saves user responses after the test. Handles a POST
+    method from submitting the test form.
+    """
+
+    assert isinstance(request, HttpRequest)
+
+    if request.method == "POST":
+        # save user responses
+
+        return results(request)
+
+def results(request):
+    """
+    If a user has already taken the test, then this is called,
+    displays some statitics related to user responses
+    """
+
+    assert isinstance(request, HttpRequest)
+
+    if request.method == "GET":
+        return render(request, 'app/results.html', {'title':'Results'})
