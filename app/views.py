@@ -139,8 +139,7 @@ def results(request):
         for case in VisionCase.objects.all():
             results['test_results'][case.title] = len(Answer.objects.filter(user = request.user).filter(option__case = case))
             sum += results['test_results'][case.title]
-            print(case.title + " = " + str(len(Answer.objects.filter(user = request.user).filter(option__case = case))))
-
+            
         results['undetermined_tests'] = results['total_tests'] - sum
 
         return render(request, 'app/results.html', {'title':'Results', 'results' : results})
