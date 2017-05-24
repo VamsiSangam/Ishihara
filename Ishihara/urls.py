@@ -8,6 +8,8 @@ urlpatterns = [
 
     # Application URLs
     url(r'^$', views.login, name='login'),
+    url(r'^logout/$', views.logout, name='logout'),
+    url(r'^register/$', views.register, name='register'),
     url(r'^test/$', views.test, name='test'),
     url(r'^save/$', views.save, name='save'),
     url(r'^results/$', views.results, name='results'),

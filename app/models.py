@@ -31,9 +31,9 @@ class Option(models.Model):
 
 class Answer(models.Model):
     # which user
-    user = models.OneToOneField(User, null = False)
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
     # responded to which question
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(Question, on_delete = models.CASCADE)
     # which option did he/she select
     option = models.ForeignKey(Option)
 

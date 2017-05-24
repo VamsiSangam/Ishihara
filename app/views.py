@@ -22,14 +22,61 @@ def login(request):
 
     if request.method == "GET":
         return render(request, 'app/login.html', {'title':'Login'})
+    elif request.method == "POST":
+        email = request.POST["email"]
+        password = request.POST["password"]
+        user = auth.authenticate(username = email, password = password)
+        
+        if user is not None:
+            if user.is_active:
+                auth.login(request, user)
+                
+                if Answer.objects.filter(user = user).exists():
+                    return redirect(reverse('results'))
+                else:
+                    return redirect(reverse('test'))
 
+@login_required
+def logout(request):
+    assert isinstance(request, HttpRequest)
+    
+    auth.logout(request)
 
-def test(request):
+    return redirect(reverse('login'))
+
+def register(request):
     """
-    View method. Returns the login/register page
+    Handles a POST request from the login page's
+    registration form. When done redirects to login page.
     """
 
     assert isinstance(request, HttpRequest)
+
+    if request.method == "POST":
+        email = request.POST['email']
+        password = request.POST['password']
+        name = request.POST['name']
+
+        # create_user(username, email, password)
+        # but here we are keeping the email and username same
+        user = User.objects.create_user(email, email, password)
+        user.first_name = name
+        user.save()
+
+        return redirect(reverse('login'))
+
+
+@login_required
+def test(request):
+    """
+    View method. Returns the test page. If the user has already
+    taken the test, then redirects to the results page
+    """
+
+    assert isinstance(request, HttpRequest)
+
+    if Answer.objects.filter(user = request.user).exists():
+        return redirect(reverse('results'))
 
     if request.method == "GET":
         # query questions and options, put it into a list of dict
@@ -52,6 +99,7 @@ def test(request):
 
         return render(request, 'app/test.html', {'title':'Test', 'questions' : result})
 
+@login_required
 def save(request):
     """
     Saves user responses after the test. Handles a POST
@@ -61,10 +109,18 @@ def save(request):
     assert isinstance(request, HttpRequest)
 
     if request.method == "POST":
-        # save user responses
+        for q in Question.objects.all():
+            if "question-" + str(q.id) in request.POST:
+                option_id = int(request.POST["question-" + str(q.id)])
 
-        return results(request)
+                if option_id != -1:
+                    option = Option.objects.get(id = option_id)
+                    ans = Answer(user = request.user, question = q, option = option)
+                    ans.save()
 
+    return redirect(reverse('results'))
+
+@login_required
 def results(request):
     """
     If a user has already taken the test, then this is called,
@@ -74,4 +130,17 @@ def results(request):
     assert isinstance(request, HttpRequest)
 
     if request.method == "GET":
-        return render(request, 'app/results.html', {'title':'Results'})
+        results = {}
+        results['total_tests'] = len(Question.objects.all())
+        results['test_results'] = {}
+        results['name'] = request.user.first_name
+        sum = 0
+
+        for case in VisionCase.objects.all():
+            results['test_results'][case.title] = len(Answer.objects.filter(user = request.user).filter(option__case = case))
+            sum += results['test_results'][case.title]
+            print(case.title + " = " + str(len(Answer.objects.filter(user = request.user).filter(option__case = case))))
+
+        results['undetermined_tests'] = results['total_tests'] - sum
+
+        return render(request, 'app/results.html', {'title':'Results', 'results' : results})
