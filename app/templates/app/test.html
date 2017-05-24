@@ -12,6 +12,10 @@
         <link rel="shortcut icon" href="{% static 'app/images/keys.png' %}">
     </head>
     <body class="light-blue">
+        <a href="{% url 'logout' %}" class="btn-floating btn-large waves-effect waves-light red right tooltipped" style="margin: 15px 15px 0px 0px;"
+           data-position="left" data-delay="50" data-tooltip="Logout">
+            <i class="large material-icons">power_settings_new</i>
+        </a>
         <div class="container">
             <br />
             <div class="card">
@@ -23,7 +27,7 @@
                     </p>
                 </div>
             </div>
-            <form method="post" action="">
+            <form method="post" action="{% url 'save' %}">
                 {% csrf_token %}
                 <div class="row">
                     {% for question in questions %}

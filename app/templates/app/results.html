@@ -12,17 +12,60 @@
         <link rel="shortcut icon" href="{% static 'app/images/keys.png' %}">
     </head>
     <body class="light-blue">
+        <a href="{% url 'logout' %}" class="btn-floating btn-large waves-effect waves-light red right tooltipped" style="margin: 15px 15px 0px 0px;"
+           data-position="left" data-delay="50" data-tooltip="Logout">
+            <i class="large material-icons">power_settings_new</i>
+        </a>
         <div class="container">
             <br />
             <div class="card">
                 <div class="card-content">
-                    <h4 style="margin-top:0px;">Test Results</h4>
-                    
+                    <a class="waves-effect waves-light btn right" href="#helpModal">Help</a>
+                    <h4 style="margin-top:0px;">Hi {{ results.name }}! Your results are out!</h4>
+                    <br />
+                    <p><b>Total no. of tests</b> - {{ results.total_tests }}</p>
+                    <p><b>Total no. of undetermined tests</b> - {{ results.undetermined_tests }}</p>
+                    <br />
+                    <table class="bordered responsive-table">
+                    <thead>
+                      <tr>
+                          <th>Vision Case</th>
+                          <th>Tests in favour of this Vision Case</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for key, value in results.test_results.items %}
+                        <tr>
+                            <td>{{ key }}</td>
+                            <td>{{ value }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                <div id="helpModal" class="modal">
+                    <div class="modal-content">
+                      <h4>Help</h4>
+                      <ul>
+                          <li>Number of tests are the total number of questions asked during the Ishihara test.</li>
+                          <li>Undetermined tests are those which you have left unanswered, or those questions where you selected "Not any".</li>
+                          <li>The table shows how many tests gave the result as Normal Vision, or gave the result as Red-green deficiency etc.</li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">OK</a>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>
         <!--Import jQuery before materialize.js-->
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // intialize modal
+                $('.modal').modal();
+            });
+        </script>
     </body>
 </html>
