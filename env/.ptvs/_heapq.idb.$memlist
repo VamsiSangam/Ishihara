@@ -5,11 +5,10 @@ __loader__
 __name__
 __package__
 __spec__
-_heapify_max
-_heappop_max
-_heapreplace_max
 heapify
 heappop
 heappush
 heappushpop
 heapreplace
+nlargest
+nsmallest

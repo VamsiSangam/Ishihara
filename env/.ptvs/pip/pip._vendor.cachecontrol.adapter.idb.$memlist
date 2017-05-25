@@ -1,7 +1,6 @@
-CacheControlAdapter
-types
-DictCache
 HTTPAdapter
+DictCache
+CallbackFileWrapper
+CacheControlAdapter
 functools
 CacheController
-CallbackFileWrapper

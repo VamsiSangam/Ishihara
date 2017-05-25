@@ -27,7 +27,7 @@ function global:deactivate ([switch]$NonDestructive) {
 
 deactivate -nondestructive
 
-$env:VIRTUAL_ENV="C:\Users\Sarada\Documents\Visual Studio 2015\Projects\Ishihara\env"
+$env:VIRTUAL_ENV="E:\Education\GitHubProjects\Ishihara\env"
 
 # Set the prompt to include the env name
 # Make sure _OLD_VIRTUAL_PROMPT is global

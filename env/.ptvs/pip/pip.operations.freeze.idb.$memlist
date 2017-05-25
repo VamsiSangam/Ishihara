@@ -1,12 +1,11 @@
 logger
-RequirementParseError
+stdlib_pkgs
 pkg_resources
 absolute_import
 logging
-re
-COMMENT_RE
-canonicalize_name
-get_installed_distributions
 freeze
-pip
 InstallRequirement
+freeze_excludes
+get_installed_distributions
+pip
+re

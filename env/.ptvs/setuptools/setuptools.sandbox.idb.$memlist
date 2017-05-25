@@ -10,11 +10,9 @@ _file
 save_path
 setup_context
 pickle
-save_modules
+tempfile
 hide_setuptools
-six
-WRITE_FLAGS
-pushd
+save_pkg_resources_state
 re
 UnpickleableException
 run_setup
@@ -32,8 +30,9 @@ pkg_resources
 working_set
 os
 builtins
-tempfile
+save_modules
+compat
 save_argv
 ExceptionSaver
-save_pkg_resources_state
-map
+WRITE_FLAGS
+pushd

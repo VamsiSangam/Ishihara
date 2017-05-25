@@ -1,5 +1,4 @@
 BuiltinImporter
-DirEntry
 F_OK
 O_APPEND
 O_BINARY
@@ -50,10 +49,8 @@ environ
 error
 execv
 execve
-fspath
 fstat
 fsync
-ftruncate
 get_handle_inheritable
 get_inheritable
 get_terminal_size
@@ -78,7 +75,6 @@ remove
 rename
 replace
 rmdir
-scandir
 set_handle_inheritable
 set_inheritable
 spawnv
@@ -94,7 +90,6 @@ system
 terminal_size
 times
 times_result
-truncate
 umask
 uname_result
 unlink

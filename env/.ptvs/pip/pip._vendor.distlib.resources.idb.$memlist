@@ -3,9 +3,9 @@ ResourceContainer
 unicode_literals
 ResourceCache
 types
-register_finder
+_dummy_module
 get_cache_base
-_fi
+register_finder
 os
 cached_property
 logger
@@ -13,12 +13,12 @@ _finder_cache
 Resource
 pkgutil
 finder
+_frozen_importlib
 io
 logging
 zipimport
 path_to_cache_dir
 _finder_registry
-_dummy_module
 ResourceFinder
 DistlibException
 ZipResourceFinder

@@ -4,8 +4,9 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <Name>Ishihara</Name>
     <RootNamespace>Ishihara</RootNamespace>
-    <InterpreterId>{e93780b3-da85-47c2-93d7-339c27714045}</InterpreterId>
-    <InterpreterVersion>3.5</InterpreterVersion>
+    <InterpreterId>{253a5fb8-7507-42ae-ad81-713ade040bf7}</InterpreterId>
+    <InterpreterVersion>3.4</InterpreterVersion>
+    <NameOfLastUsedPublishProfile>ishihara - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -42,6 +43,7 @@
     <Compile Include="Ishihara\settings.py" />
     <Compile Include="Ishihara\urls.py" />
     <Compile Include="Ishihara\wsgi.py" />
+    <Compile Include="ptvs_virtualenv_proxy.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitignore" />
@@ -87,6 +89,11 @@
     <Content Include="app\templates\app\results.html" />
     <Content Include="app\templates\app\test.html" />
     <Content Include="app\templates\app\login.html" />
+    <Content Include="db.sqlite3" />
+    <Content Include="ishihara - Web Deploy.pubxml.user" />
+    <Content Include="web.config" />
+    <None Include="web.debug.config" />
+    <None Include="ishihara - Web Deploy.pubxml" />
     <Content Include="README.md" />
     <Content Include="requirements.txt" />
   </ItemGroup>
@@ -102,10 +109,10 @@
   </ItemGroup>
   <ItemGroup>
     <Interpreter Include="env\">
-      <Id>{e93780b3-da85-47c2-93d7-339c27714045}</Id>
-      <BaseInterpreter>{5c360672-abef-40cc-a12c-1173cf35e0c7}</BaseInterpreter>
-      <Version>3.5</Version>
-      <Description>env (Python 3.6.0)</Description>
+      <Id>{253a5fb8-7507-42ae-ad81-713ade040bf7}</Id>
+      <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
+      <Version>3.4</Version>
+      <Description>env (Python 3.4)</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <LibraryPath>Lib\</LibraryPath>

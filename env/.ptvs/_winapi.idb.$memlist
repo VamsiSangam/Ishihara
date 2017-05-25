@@ -4,7 +4,6 @@ CREATE_NEW_PROCESS_GROUP
 CloseHandle
 ConnectNamedPipe
 CreateFile
-CreateJunction
 CreateNamedPipe
 CreatePipe
 CreateProcess

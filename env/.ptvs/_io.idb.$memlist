@@ -15,7 +15,6 @@ _BufferedIOBase
 _IOBase
 _RawIOBase
 _TextIOBase
-_WindowsConsoleIO
 __doc__
 __loader__
 __name__

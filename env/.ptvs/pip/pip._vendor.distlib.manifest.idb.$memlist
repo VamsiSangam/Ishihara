@@ -3,12 +3,10 @@ _COMMENTED_LINE
 os
 convert_path
 logging
-re
+_COLLAPSE_PATTERN
 fnmatch
 Manifest
 __all__
 DistlibException
-_PYTHON_VERSION
-_COLLAPSE_PATTERN
-sys
+re
 fsdecode

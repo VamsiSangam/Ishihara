@@ -9,4 +9,6 @@ logger
 path_to_url
 vcs
 rmtree
+call_subprocess
 display_path
+re

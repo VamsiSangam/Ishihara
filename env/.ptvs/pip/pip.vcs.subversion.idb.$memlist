@@ -4,7 +4,7 @@ _svn_url_re
 _svn_revision_re
 Link
 re
-os
+indent_log
 logger
 get_rev_options
 _svn_info_xml_url_re
@@ -14,7 +14,8 @@ _svn_rev_re
 logging
 _svn_xml_url_re
 vcs
-indent_log
+call_subprocess
+os
 Subversion
 rmtree
 absolute_import

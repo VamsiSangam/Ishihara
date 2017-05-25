@@ -2,12 +2,11 @@ Node
 moduleFactoryFactory
 weakref
 absolute_import
-MutableMapping
-getDomBuilder
+unicode_literals
 constants
 division
 getDomModule
 minidom
-unicode_literals
-base
+_base
+getDomBuilder
 namespaces

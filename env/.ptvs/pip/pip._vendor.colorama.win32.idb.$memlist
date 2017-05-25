@@ -5,7 +5,6 @@ COORD
 byref
 _GetStdHandle
 ctypes
-winapi_test
 handles
 FillConsoleOutputAttribute
 _SetConsoleTextAttribute

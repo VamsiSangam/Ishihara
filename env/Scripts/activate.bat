@@ -1,5 +1,5 @@
 @echo off
-set "VIRTUAL_ENV=C:\Users\Sarada\Documents\Visual Studio 2015\Projects\Ishihara\env"
+set "VIRTUAL_ENV=E:\Education\GitHubProjects\Ishihara\env"
 
 if not defined PROMPT (
     set "PROMPT=$P$G"

@@ -4,9 +4,8 @@ os
 log
 convert_path
 Command
-configparser
+setopt
 config_file
 DistutilsOptionError
 __all__
 option_base
-setopt

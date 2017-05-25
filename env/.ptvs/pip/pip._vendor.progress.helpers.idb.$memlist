@@ -1,9 +1,10 @@
 WriteMixin
 HIDE_CURSOR
 exit
-SIGINT
+unicode_literals
 SigIntMixin
 WritelnMixin
 signal
 print_function
 SHOW_CURSOR
+SIGINT

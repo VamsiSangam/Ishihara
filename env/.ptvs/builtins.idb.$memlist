@@ -34,7 +34,6 @@ KeyError
 KeyboardInterrupt
 LookupError
 MemoryError
-ModuleNotFoundError
 NameError
 None
 NoneType
@@ -46,12 +45,10 @@ OverflowError
 PendingDeprecationWarning
 PermissionError
 ProcessLookupError
-RecursionError
 ReferenceError
 ResourceWarning
 RuntimeError
 RuntimeWarning
-StopAsyncIteration
 StopIteration
 SyntaxError
 SyntaxWarning

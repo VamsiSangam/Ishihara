@@ -22,8 +22,6 @@ lookup
 lookup_error
 mbcs_decode
 mbcs_encode
-oem_decode
-oem_encode
 raw_unicode_escape_decode
 raw_unicode_escape_encode
 readbuffer_encode

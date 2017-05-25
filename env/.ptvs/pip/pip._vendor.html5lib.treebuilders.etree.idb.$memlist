@@ -1,13 +1,13 @@
-_ihatexml
 moduleFactoryFactory
+getETreeModule
 text_type
 absolute_import
 unicode_literals
-re
 constants
 division
 getETreeBuilder
-getETreeModule
 tag_regexp
-base
+ihatexml
+_base
+re
 namespaces

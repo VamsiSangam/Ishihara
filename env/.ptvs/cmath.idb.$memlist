@@ -14,16 +14,11 @@ cos
 cosh
 e
 exp
-inf
-infj
-isclose
 isfinite
 isinf
 isnan
 log
 log10
-nan
-nanj
 phase
 pi
 polar
@@ -33,4 +28,3 @@ sinh
 sqrt
 tan
 tanh
-tau

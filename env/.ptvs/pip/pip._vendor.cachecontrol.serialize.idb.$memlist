@@ -1,11 +1,9 @@
-_b64_encode_bytes
+Serializer
 pickle
 base64
-_b64_encode
 json
 _b64_decode_str
-Serializer
-text_type
+_b64_encode_bytes
 HTTPResponse
 CaseInsensitiveDict
 _b64_encode_str
